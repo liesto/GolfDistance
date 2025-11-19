@@ -58,7 +58,7 @@ function App() {
   return (
     <div className="app-wrapper">
       <div className="header-section">
-        <h1>Distance Calculator</h1>
+        <h1>Virtual Cody</h1>
         <p className="subtitle">Professional-level precision</p>
       </div>
 
