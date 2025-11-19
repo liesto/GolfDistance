@@ -59,7 +59,7 @@ function App() {
     <div className="app-wrapper">
       <div className="header-section">
         <h1>Virtual Cody</h1>
-        <p className="subtitle">Professional-level precision</p>
+        <p className="subtitle">Better yardage estimates</p>
       </div>
 
       <div className="main-content">
