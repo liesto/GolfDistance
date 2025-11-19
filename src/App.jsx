@@ -148,7 +148,7 @@ function App() {
                 onChange={(e) => handleInputChange('elevationFeet', parseInt(e.target.value) || 0)}
                 className="picker-select"
               >
-                {[0, 2000, 4000, 6000, 8000, 10000].map(elev => (
+                {Array.from({length: 26}, (_, i) => i * 200).map(elev => (
                   <option key={elev} value={elev}>{elev}'</option>
                 ))}
               </select>
