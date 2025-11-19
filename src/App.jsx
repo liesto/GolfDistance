@@ -116,40 +116,42 @@ function App() {
                 onClick={() => handleInputChange('windDirection', 'Crosswind')}
               />
             </div>
-            <input
-              type="number"
+            <select
               value={inputs.windSpeedMph}
               onChange={(e) => handleInputChange('windSpeedMph', parseInt(e.target.value) || 0)}
-              className="number-input"
-              placeholder="0"
-              min="0"
-              max="100"
-            />
+              className="picker-select"
+            >
+              {[0, 5, 10, 15, 20, 25, 30, 40, 50].map(speed => (
+                <option key={speed} value={speed}>{speed} mph</option>
+              ))}
+            </select>
           </div>
 
           {/* Temperature & Elevation */}
           <div className="two-column-group">
             <div className="factor-group">
               <label className="factor-label">Temp (°F)</label>
-              <input
-                type="number"
+              <select
                 value={inputs.temperatureFahrenheit}
                 onChange={(e) => handleInputChange('temperatureFahrenheit', parseInt(e.target.value) || 75)}
-                className="number-input"
-                min="-50"
-                max="120"
-              />
+                className="picker-select"
+              >
+                {[32, 40, 50, 60, 70, 75, 80, 90, 100, 110].map(temp => (
+                  <option key={temp} value={temp}>{temp}°</option>
+                ))}
+              </select>
             </div>
             <div className="factor-group">
               <label className="factor-label">Elevation (ft)</label>
-              <input
-                type="number"
+              <select
                 value={inputs.elevationFeet}
                 onChange={(e) => handleInputChange('elevationFeet', parseInt(e.target.value) || 0)}
-                className="number-input"
-                min="-300"
-                max="15000"
-              />
+                className="picker-select"
+              >
+                {[0, 500, 1000, 1500, 2000, 2500, 3000, 3500, 4000, 4500, 5000, 6000, 7000, 8000, 9000, 10000].map(elev => (
+                  <option key={elev} value={elev}>{elev}'</option>
+                ))}
+              </select>
             </div>
           </div>
         </section>
