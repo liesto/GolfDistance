@@ -64,30 +64,17 @@ function App() {
 
       <div className="main-content">
         {/* TRUE YARDAGE SECTION */}
-        <div className="true-yardage-section">
-          <label>True Yardage</label>
-          <div className="yardage-input-group">
-            <button
-              onClick={() => handleRangeChange(Math.max(0, inputs.rangefinderDistance - 1))}
-              className="yardage-btn minus"
-            >
-              −
-            </button>
-            <input
-              type="number"
-              value={inputs.rangefinderDistance}
-              onChange={(e) => handleRangeChange(parseInt(e.target.value) || 0)}
-              className="yardage-input"
-              min="0"
-              max="300"
-            />
-            <button
-              onClick={() => handleRangeChange(inputs.rangefinderDistance + 1)}
-              className="yardage-btn plus"
-            >
-              +
-            </button>
-          </div>
+        <div className="factor-group">
+          <label className="factor-label">True Yardage</label>
+          <select
+            value={inputs.rangefinderDistance}
+            onChange={(e) => handleRangeChange(parseInt(e.target.value) || 60)}
+            className="picker-select"
+          >
+            {Array.from({length: 161}, (_, i) => 60 + i).map(yardage => (
+              <option key={yardage} value={yardage}>{yardage} yds</option>
+            ))}
+          </select>
         </div>
 
         {/* ENVIRONMENTAL FACTORS SECTION */}
